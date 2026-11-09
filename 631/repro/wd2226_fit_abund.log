@@ -1,0 +1,233 @@
+#XSPEC version: 13.0.1
+#Build Date/Time: Sat Oct 24 14:11:53 2026
+# Solar Abundance Vector set to angr:  Anders E. & Grevesse N. Geochimica et Cosmochimica Acta 53, 197 (1989)
+#Warning: RMF DETNAM keyword (ACIS-7) is not consistent with that in the ARF (ACIS-56789)
+#Warning: RMF DETNAM keyword (ACIS-7) is not consistent with that in spectrum (ACIS-56789)
+#***Notice: background has 27 of 61 (44.3%) zero-count bins.
+#    This can lead to parameter bias when using cstat or pgstat. To
+#    reduce this bias use the commands `group back minsn 3` or
+#    `group back optbin 0`.
+#
+#
+#1 spectrum  in use
+# 
+#Spectral Data File: wd2226_grp.pi  Spectrum 1
+#Net count rate (cts/s) for Spectrum:1  4.872e-02 +/- 1.278e-03 (97.7 % total)
+# Assigned to Data Group 1 and Plot Group 1
+#  Noticed Channels:  1-61
+#  Telescope: CHANDRA Instrument: ACIS  Channel Type: PI
+#  Exposure Time: 3.055e+04 sec
+# Using fit statistic: chi
+# Using Background File                wd2226_bkg.pi
+#  Background Exposure Time: 3.055e+04 sec
+# Using Response (RMF) File            wd2226.rmf for Source 1
+# Using Auxiliary Response (ARF) File  wd2226.arf
+#
+#
+#ignore:     1 channels ignored from  source number 1
+#     6 channels (1-6) ignored in spectrum #     1
+#     3 channels (59-61) ignored in spectrum #     1
+#
+#
+#Input parameter value, delta, min, bot, top, and max values for ...
+#              1      0.001(      0.01)          0          0     100000      1e+06
+#              1       0.01(      0.01)      0.008      0.008         64         64
+#              1     -0.001(      0.01)          0          0          5          5
+#              0      -0.01(      0.01)     -0.999     -0.999         10         10
+#              1       0.01(      0.01)          0          0      1e+20      1e+24
+#Reading APEC data from 3.1.3
+#
+#
+#Fit statistic  : Chi-Squared              1.608794e+10     using 52 bins.
+#
+#Test statistic : Chi-Squared              1.608794e+10     using 52 bins.
+# Null hypothesis probability of 0.000000e+00 with 49 degrees of freedom
+# Current data and model not fit yet.
+#
+#========================================================================
+#Model TBabs<1>*apec<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    1.00000      +/-  0.0          
+#   2    2   apec       kT         keV      1.00000      +/-  0.0          
+#   3    2   apec       Abundanc            1.00000      frozen
+#   4    2   apec       Redshift            0.0          frozen
+#   5    2   apec       norm                1.00000      +/-  0.0          
+#________________________________________________________________________
+#
+#
+!XSPEC> newpar 1 0.016
+newpar 2 0.9
+newpar 5 4.3e-5
+fit
+#
+#Fit statistic  : Chi-Squared              5.136915e+11     using 52 bins.
+#
+#Test statistic : Chi-Squared              5.136915e+11     using 52 bins.
+# Null hypothesis probability of 0.000000e+00 with 49 degrees of freedom
+# Current data and model not fit yet.
+#
+#Fit statistic  : Chi-Squared              6.699870e+11     using 52 bins.
+#
+#Test statistic : Chi-Squared              6.699870e+11     using 52 bins.
+# Null hypothesis probability of 0.000000e+00 with 49 degrees of freedom
+# Current data and model not fit yet.
+#
+#Fit statistic  : Chi-Squared                   86.09     using 52 bins.
+#
+#Test statistic : Chi-Squared                   86.09     using 52 bins.
+# Null hypothesis probability of 8.39e-04 with 49 degrees of freedom
+# Current data and model not fit yet.
+#                                   Parameters
+#Chi-Squared  |beta|/N    Lvl          1:nH          2:kT        5:norm
+#LM is using analytic gradients (better numerical accuracy on tabulated models).
+#Parameter uncertainties may differ from previous FD-based fits; on expensive-likelihood fits (large
+#response convolutions) per-iteration cost may be higher.  Set "xset DISABLE_ANALYTIC_GRAD yes" to
+#revert to finite differences.
+#85.9692      7.65513      -4     0.0159654      0.895738   4.29551e-05
+#85.9691      219.453      -5     0.0158287      0.895742   4.29346e-05
+#========================================
+# Variances and Principal Axes
+#                 1        2        5  
+# 1.4766E-12| -0.0002  -0.0001   1.0000  
+# 1.1582E-04| -0.9374  -0.3482  -0.0002  
+# 2.1832E-04|  0.3482  -0.9374   0.0000  
+#----------------------------------------
+#
+#====================================
+#  Covariance Matrix
+#        1           2           3   
+#   1.283e-04  -3.346e-05   1.867e-08
+#  -3.346e-05   2.059e-04   5.539e-09
+#   1.867e-08   5.539e-09   4.743e-12
+#------------------------------------
+#
+#========================================================================
+#Model TBabs<1>*apec<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    1.58287E-02  +/-  1.13249E-02  
+#   2    2   apec       kT         keV      0.895742     +/-  1.43490E-02  
+#   3    2   apec       Abundanc            1.00000      frozen
+#   4    2   apec       Redshift            0.0          frozen
+#   5    2   apec       norm                4.29346E-05  +/-  2.17778E-06  
+#________________________________________________________________________
+#
+#
+#Fit statistic  : Chi-Squared                   85.97     using 52 bins.
+#
+#Test statistic : Chi-Squared                   85.97     using 52 bins.
+# Null hypothesis probability of 8.63e-04 with 49 degrees of freedom
+#
+!XSPEC> thaw 3
+fit
+#
+#Fit statistic  : Chi-Squared                   85.97     using 52 bins.
+#
+#Test statistic : Chi-Squared                   85.97     using 52 bins.
+# Null hypothesis probability of 6.28e-04 with 48 degrees of freedom
+# Current data and model not fit yet.
+#                                   Parameters
+#Chi-Squared  |beta|/N    Lvl          1:nH          2:kT    3:Abundanc        5:norm
+#85.1622      2.35643      -2     0.0159747      0.894427      0.953762   4.44469e-05
+#84.4702      36794.8      -2     0.0173130      0.893686      0.916709   4.61680e-05
+#84.2998      36562.9      -3     0.0301445      0.888487      0.686686   5.80755e-05
+#79.2407      296422       -3     0.0420596      0.883662      0.584522   7.08407e-05
+#78.7526      128976       -4     0.0563809      0.876726      0.468609   8.73683e-05
+#76.9175      129743       -5     0.0602957      0.874624      0.461915   9.27993e-05
+#76.9146      3977.16      -6     0.0608221      0.874456      0.459331   9.34645e-05
+#==================================================
+# Variances and Principal Axes
+#                 1        2        3        5  
+# 6.8577E-12| -0.0003  -0.0001   0.0002   1.0000  
+# 1.3010E-04|  0.9402   0.3277   0.0924   0.0003  
+# 2.8490E-04|  0.3143  -0.9397   0.1351   0.0000  
+# 9.3779E-03| -0.1311   0.0980   0.9865  -0.0002  
+#--------------------------------------------------
+#
+#================================================
+#  Covariance Matrix
+#        1           2           3           4   
+#   3.044e-04  -1.646e-04  -1.190e-03   2.697e-07
+#  -1.646e-04   3.557e-04   8.747e-04  -1.586e-07
+#  -1.190e-03   8.747e-04   9.133e-03  -1.714e-06
+#   2.697e-07  -1.586e-07  -1.714e-06   3.448e-10
+#------------------------------------------------
+#
+#========================================================================
+#Model TBabs<1>*apec<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    6.08221E-02  +/-  1.74458E-02  
+#   2    2   apec       kT         keV      0.874456     +/-  1.88592E-02  
+#   3    2   apec       Abundanc            0.459331     +/-  9.55660E-02  
+#   4    2   apec       Redshift            0.0          frozen
+#   5    2   apec       norm                9.34645E-05  +/-  1.85695E-05  
+#________________________________________________________________________
+#
+#
+#Fit statistic  : Chi-Squared                   76.91     using 52 bins.
+#
+#Test statistic : Chi-Squared                   76.91     using 52 bins.
+# Null hypothesis probability of 5.06e-03 with 48 degrees of freedom
+#
+!XSPEC> error 3
+# Parameter   Confidence Range (2.706)
+#     3     0.306075     0.677256    (-0.152882,0.218299)
+#
+!XSPEC> newpar 3 1
+freeze 3
+fit
+#
+#Fit statistic  : Chi-Squared                 1139.88     using 52 bins.
+#
+#Test statistic : Chi-Squared                 1139.88     using 52 bins.
+# Null hypothesis probability of 2.94e-207 with 48 degrees of freedom
+# Current data and model not fit yet.
+#
+#Fit statistic  : Chi-Squared                 1139.88     using 52 bins.
+#
+#Test statistic : Chi-Squared                 1139.88     using 52 bins.
+# Null hypothesis probability of 1.44e-206 with 49 degrees of freedom
+# Current data and model not fit yet.
+#                                   Parameters
+#Chi-Squared  |beta|/N    Lvl          1:nH          2:kT        5:norm
+#86.4518      55.6392      -4    0.00929611      0.901655   4.19629e-05
+#85.9709      53855.8      -5     0.0153809      0.895579   4.28488e-05
+#85.9691      1307.4       -6     0.0157855      0.895726   4.29268e-05
+#========================================
+# Variances and Principal Axes
+#                 1        2        5  
+# 1.4696E-12| -0.0002  -0.0001   1.0000  
+# 1.1499E-04| -0.9405  -0.3399  -0.0002  
+# 2.1783E-04|  0.3399  -0.9405   0.0000  
+#----------------------------------------
+#
+#====================================
+#  Covariance Matrix
+#        1           2           3   
+#   1.269e-04  -3.287e-05   1.847e-08
+#  -3.287e-05   2.060e-04   5.625e-09
+#   1.847e-08   5.625e-09   4.709e-12
+#------------------------------------
+#
+#========================================================================
+#Model TBabs<1>*apec<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    1.57855E-02  +/-  1.12635E-02  
+#   2    2   apec       kT         keV      0.895726     +/-  1.43511E-02  
+#   3    2   apec       Abundanc            1.00000      frozen
+#   4    2   apec       Redshift            0.0          frozen
+#   5    2   apec       norm                4.29268E-05  +/-  2.17003E-06  
+#________________________________________________________________________
+#
+#
+#Fit statistic  : Chi-Squared                   85.97     using 52 bins.
+#
+#Test statistic : Chi-Squared                   85.97     using 52 bins.
+# Null hypothesis probability of 8.63e-04 with 49 degrees of freedom
+#
+!XSPEC> log none
+exit
+#

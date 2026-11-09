@@ -1,0 +1,437 @@
+#XSPEC version: 13.0.1
+#Build Date/Time: Sat Oct 24 14:11:53 2026
+#
+!XSPEC> abund wilm
+# Solar Abundance Vector set to wilm:  Wilms, J., Allen, A. & McCray, R. ApJ 542 914 (2000) (abundances are set to zero for those elements not included in the paper).
+#
+!XSPEC> data wd2226_grp.pi
+#Warning: RMF DETNAM keyword (ACIS-7) is not consistent with that in the ARF (ACIS-56789)
+#Warning: RMF DETNAM keyword (ACIS-7) is not consistent with that in spectrum (ACIS-56789)
+#***Notice: background has 27 of 61 (44.3%) zero-count bins.
+#    This can lead to parameter bias when using cstat or pgstat. To
+#    reduce this bias use the commands `group back minsn 3` or
+#    `group back optbin 0`.
+#
+#
+#1 spectrum  in use
+# 
+#Spectral Data File: wd2226_grp.pi  Spectrum 1
+#Net count rate (cts/s) for Spectrum:1  4.872e-02 +/- 1.278e-03 (97.7 % total)
+# Assigned to Data Group 1 and Plot Group 1
+#  Noticed Channels:  1-61
+#  Telescope: CHANDRA Instrument: ACIS  Channel Type: PI
+#  Exposure Time: 3.055e+04 sec
+# Using fit statistic: chi
+# Using Background File                wd2226_bkg.pi
+#  Background Exposure Time: 3.055e+04 sec
+# Using Response (RMF) File            wd2226.rmf for Source 1
+# Using Auxiliary Response (ARF) File  wd2226.arf
+#
+#
+!XSPEC> ignore bad
+#
+#ignore:     1 channels ignored from  source number 1
+#
+!XSPEC> ignore **-0.3 2.0-**
+#     6 channels (1-6) ignored in spectrum #     1
+#     3 channels (59-61) ignored in spectrum #     1
+#
+#
+!XSPEC> model tbabs*apec
+#
+#Input parameter value, delta, min, bot, top, and max values for ...
+#              1      0.001(      0.01)          0          0     100000      1e+06
+#              1       0.01(      0.01)      0.008      0.008         64         64
+#              1     -0.001(      0.01)          0          0          5          5
+#              0      -0.01(      0.01)     -0.999     -0.999         10         10
+#              1       0.01(      0.01)          0          0      1e+20      1e+24
+#Reading APEC data from 3.1.3
+#
+#
+#Fit statistic  : Chi-Squared              1.487527e+10     using 52 bins.
+#
+#Test statistic : Chi-Squared              1.487527e+10     using 52 bins.
+# Null hypothesis probability of 0.000000e+00 with 49 degrees of freedom
+# Current data and model not fit yet.
+#
+#========================================================================
+#Model TBabs<1>*apec<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    1.00000      +/-  0.0          
+#   2    2   apec       kT         keV      1.00000      +/-  0.0          
+#   3    2   apec       Abundanc            1.00000      frozen
+#   4    2   apec       Redshift            0.0          frozen
+#   5    2   apec       norm                1.00000      +/-  0.0          
+#________________________________________________________________________
+#
+#
+!XSPEC> newpar 1 0.02
+newpar 2 0.9
+newpar 5 1e-4
+fit
+#
+#Fit statistic  : Chi-Squared              2.251206e+11     using 52 bins.
+#
+#Test statistic : Chi-Squared              2.251206e+11     using 52 bins.
+# Null hypothesis probability of 0.000000e+00 with 49 degrees of freedom
+# Current data and model not fit yet.
+#
+#Fit statistic  : Chi-Squared              2.800154e+11     using 52 bins.
+#
+#Test statistic : Chi-Squared              2.800154e+11     using 52 bins.
+# Null hypothesis probability of 0.000000e+00 with 49 degrees of freedom
+# Current data and model not fit yet.
+#
+#Fit statistic  : Chi-Squared                  391.29     using 52 bins.
+#
+#Test statistic : Chi-Squared                  391.29     using 52 bins.
+# Null hypothesis probability of 6.88e-55 with 49 degrees of freedom
+# Current data and model not fit yet.
+#                                   Parameters
+#Chi-Squared  |beta|/N    Lvl          1:nH          2:kT        5:norm
+#LM is using analytic gradients (better numerical accuracy on tabulated models).
+#Parameter uncertainties may differ from previous FD-based fits; on expensive-likelihood fits (large
+#response convolutions) per-iteration cost may be higher.  Set "xset DISABLE_ANALYTIC_GRAD yes" to
+#revert to finite differences.
+#76.0403      85.9996      -4     0.0455107      0.883825   7.10407e-05
+#75.7846      1400.32      -5     0.0516116      0.883046   7.21984e-05
+#75.781       248.725      -6     0.0523585      0.883073   7.23491e-05
+#========================================
+# Variances and Principal Axes
+#                 1        2        5  
+# 4.1378E-12| -0.0002  -0.0001   1.0000  
+# 1.6207E-04| -0.9252  -0.3794  -0.0002  
+# 2.5822E-04|  0.3794  -0.9252   0.0000  
+#----------------------------------------
+#
+#====================================
+#  Covariance Matrix
+#        1           2           3   
+#   1.759e-04  -3.375e-05   3.181e-08
+#  -3.375e-05   2.444e-04   1.151e-08
+#   3.181e-08   1.151e-08   1.120e-11
+#------------------------------------
+#
+#========================================================================
+#Model TBabs<1>*apec<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    5.23585E-02  +/-  1.32632E-02  
+#   2    2   apec       kT         keV      0.883073     +/-  1.56325E-02  
+#   3    2   apec       Abundanc            1.00000      frozen
+#   4    2   apec       Redshift            0.0          frozen
+#   5    2   apec       norm                7.23491E-05  +/-  3.34598E-06  
+#________________________________________________________________________
+#
+#
+#Fit statistic  : Chi-Squared                   75.78     using 52 bins.
+#
+#Test statistic : Chi-Squared                   75.78     using 52 bins.
+# Null hypothesis probability of 8.38e-03 with 49 degrees of freedom
+#
+!XSPEC> show fit
+#
+#Fit statistic  : Chi-Squared                   75.78     using 52 bins.
+#
+#Test statistic : Chi-Squared                   75.78     using 52 bins.
+# Null hypothesis probability of 8.38e-03 with 49 degrees of freedom
+#
+!XSPEC> ftgetmodeldata
+#/home/ubuntu/software/heasoft-6.37.1/x86_64-pc-linux-gnu-libc2.43/bin/ftgetmodeldata
+#
+!XSPEC> error 1 2 5
+flux 0.3 2.0 err 1000 90
+# Parameter   Confidence Range (2.706)
+#     1    0.0313692    0.0780201    (-0.0210652,0.0255858)
+#     2     0.851686     0.908075    (-0.0313956,0.0249933)
+#     5  6.68516e-05  7.83025e-05    (-5.51299e-06,5.93787e-06)
+#Spectrum 1: Lower range bound          0.3 reset by matrix bound to          0.3
+#Parameter distribution is derived from fit covariance matrix.
+# Model Flux 8.1815e-05 photons (1.1391e-13 ergs/cm^2/s) range (0.30000 - 2.0000 keV)
+#     Error range 7.774e-05 - 8.656e-05    (1.088e-13 - 1.192e-13)  (90.00% confidence)
+#
+!XSPEC> newpar 1 0
+flux 0.3 2.0 err 1000 90
+#
+#Fit statistic  : Chi-Squared                  139.76     using 52 bins.
+#
+#Test statistic : Chi-Squared                  139.76     using 52 bins.
+# Null hypothesis probability of 1.17e-10 with 49 degrees of freedom
+# Current data and model not fit yet.
+#Warning: Either variance is not available through 
+#         valid fit or chains, or no models are currently 
+#         active. flux error will not be calculated.
+#Spectrum 1: Lower range bound          0.3 reset by matrix bound to          0.3
+# Model Flux 0.00010318 photons (1.3369e-13 ergs/cm^2/s) range (0.30000 - 2.0000 keV)
+#
+!XSPEC> newpar 1 0.0523585
+fit
+#
+#Fit statistic  : Chi-Squared                   75.78     using 52 bins.
+#
+#Test statistic : Chi-Squared                   75.78     using 52 bins.
+# Null hypothesis probability of 8.38e-03 with 49 degrees of freedom
+# Current data and model not fit yet.
+#                                   Parameters
+#Chi-Squared  |beta|/N    Lvl          1:nH          2:kT        5:norm
+#75.781       0.148484     -4     0.0524346      0.883081   7.23646e-05
+#========================================
+# Variances and Principal Axes
+#                 1        2        5  
+# 4.1548E-12| -0.0002  -0.0001   1.0000  
+# 1.6335E-04| -0.9201  -0.3916  -0.0002  
+# 2.5908E-04|  0.3916  -0.9201   0.0000  
+#----------------------------------------
+#
+#====================================
+#  Covariance Matrix
+#        1           2           3   
+#   1.780e-04  -3.449e-05   3.215e-08
+#  -3.449e-05   2.444e-04   1.139e-08
+#   3.215e-08   1.139e-08   1.127e-11
+#------------------------------------
+#
+#========================================================================
+#Model TBabs<1>*apec<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    5.24346E-02  +/-  1.33428E-02  
+#   2    2   apec       kT         keV      0.883081     +/-  1.56332E-02  
+#   3    2   apec       Abundanc            1.00000      frozen
+#   4    2   apec       Redshift            0.0          frozen
+#   5    2   apec       norm                7.23646E-05  +/-  3.35641E-06  
+#________________________________________________________________________
+#
+#
+#Fit statistic  : Chi-Squared                   75.78     using 52 bins.
+#
+#Test statistic : Chi-Squared                   75.78     using 52 bins.
+# Null hypothesis probability of 8.38e-03 with 49 degrees of freedom
+#
+!XSPEC> abund angr
+fit
+flux 0.3 2.0
+# Solar Abundance Vector set to angr:  Anders E. & Grevesse N. Geochimica et Cosmochimica Acta 53, 197 (1989)
+#
+#Fit statistic  : Chi-Squared                  414.62     using 52 bins.
+#
+#Test statistic : Chi-Squared                  414.62     using 52 bins.
+# Null hypothesis probability of 2.28e-59 with 49 degrees of freedom
+# Current data and model not fit yet.
+#                                   Parameters
+#Chi-Squared  |beta|/N    Lvl          1:nH          2:kT        5:norm
+#86.1332      52.0558      -4     0.0122051      0.899548   4.24020e-05
+#85.9694      34925.6      -5     0.0156407      0.895625   4.28965e-05
+#85.9691      437.701      -6     0.0158042      0.895733   4.29302e-05
+#========================================
+# Variances and Principal Axes
+#                 1        2        5  
+# 1.4726E-12| -0.0002  -0.0001   1.0000  
+# 1.1536E-04| -0.9391  -0.3435  -0.0002  
+# 2.1805E-04|  0.3435  -0.9391   0.0000  
+#----------------------------------------
+#
+#====================================
+#  Covariance Matrix
+#        1           2           3   
+#   1.275e-04  -3.313e-05   1.856e-08
+#  -3.313e-05   2.059e-04   5.588e-09
+#   1.856e-08   5.588e-09   4.724e-12
+#------------------------------------
+#
+#========================================================================
+#Model TBabs<1>*apec<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    1.58042E-02  +/-  1.12906E-02  
+#   2    2   apec       kT         keV      0.895733     +/-  1.43504E-02  
+#   3    2   apec       Abundanc            1.00000      frozen
+#   4    2   apec       Redshift            0.0          frozen
+#   5    2   apec       norm                4.29302E-05  +/-  2.17347E-06  
+#________________________________________________________________________
+#
+#
+#Fit statistic  : Chi-Squared                   85.97     using 52 bins.
+#
+#Test statistic : Chi-Squared                   85.97     using 52 bins.
+# Null hypothesis probability of 8.63e-04 with 49 degrees of freedom
+#Spectrum 1: Lower range bound          0.3 reset by matrix bound to          0.3
+#Parameter distribution is derived from fit covariance matrix.
+# Model Flux 8.2309e-05 photons (1.1291e-13 ergs/cm^2/s) range (0.30000 - 2.0000 keV)
+#     Error range 7.822e-05 - 8.669e-05    (1.075e-13 - 1.181e-13)  (90.00% confidence)
+#
+!XSPEC> newpar 1 0.0523585
+#
+#Fit statistic  : Chi-Squared                  110.57     using 52 bins.
+#
+#Test statistic : Chi-Squared                  110.57     using 52 bins.
+# Null hypothesis probability of 1.18e-06 with 49 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC> fit
+#                                   Parameters
+#Chi-Squared  |beta|/N    Lvl          1:nH          2:kT        5:norm
+#86.0734      61.063       -4     0.0134105      0.898893   4.25244e-05
+#85.9692      43126        -5     0.0157355      0.895648   4.29135e-05
+#85.9691      282.058      -6     0.0158111      0.895736   4.29314e-05
+#========================================
+# Variances and Principal Axes
+#                 1        2        5  
+# 1.4737E-12| -0.0002  -0.0001   1.0000  
+# 1.1549E-04| -0.9386  -0.3449  -0.0002  
+# 2.1814E-04|  0.3449  -0.9386   0.0000  
+#----------------------------------------
+#
+#====================================
+#  Covariance Matrix
+#        1           2           3   
+#   1.277e-04  -3.323e-05   1.859e-08
+#  -3.323e-05   2.059e-04   5.574e-09
+#   1.859e-08   5.574e-09   4.729e-12
+#------------------------------------
+#
+#========================================================================
+#Model TBabs<1>*apec<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    1.58111E-02  +/-  1.13006E-02  
+#   2    2   apec       kT         keV      0.895736     +/-  1.43502E-02  
+#   3    2   apec       Abundanc            1.00000      frozen
+#   4    2   apec       Redshift            0.0          frozen
+#   5    2   apec       norm                4.29314E-05  +/-  2.17473E-06  
+#________________________________________________________________________
+#
+#
+#Fit statistic  : Chi-Squared                   85.97     using 52 bins.
+#
+#Test statistic : Chi-Squared                   85.97     using 52 bins.
+# Null hypothesis probability of 8.63e-04 with 49 degrees of freedom
+#
+!XSPEC> abund angr
+fit
+flux 0.3 2.0
+# Solar Abundance Vector set to angr:  Anders E. & Grevesse N. Geochimica et Cosmochimica Acta 53, 197 (1989)
+#
+#Fit statistic  : Chi-Squared                   85.97     using 52 bins.
+#
+#Test statistic : Chi-Squared                   85.97     using 52 bins.
+# Null hypothesis probability of 8.63e-04 with 49 degrees of freedom
+# Current data and model not fit yet.
+#                                   Parameters
+#Chi-Squared  |beta|/N    Lvl          1:nH          2:kT        5:norm
+#85.9691      0.0222648    -4     0.0158187      0.895737   4.29327e-05
+#========================================
+# Variances and Principal Axes
+#                 1        2        5  
+# 1.4749E-12| -0.0002  -0.0001   1.0000  
+# 1.1558E-04| -0.9382  -0.3461  -0.0002  
+# 2.1813E-04|  0.3461  -0.9382   0.0000  
+#----------------------------------------
+#
+#====================================
+#  Covariance Matrix
+#        1           2           3   
+#   1.279e-04  -3.330e-05   1.861e-08
+#  -3.330e-05   2.058e-04   5.559e-09
+#   1.861e-08   5.559e-09   4.734e-12
+#------------------------------------
+#
+#========================================================================
+#Model TBabs<1>*apec<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    1.58187E-02  +/-  1.13076E-02  
+#   2    2   apec       kT         keV      0.895737     +/-  1.43474E-02  
+#   3    2   apec       Abundanc            1.00000      frozen
+#   4    2   apec       Redshift            0.0          frozen
+#   5    2   apec       norm                4.29327E-05  +/-  2.17572E-06  
+#________________________________________________________________________
+#
+#
+#Fit statistic  : Chi-Squared                   85.97     using 52 bins.
+#
+#Test statistic : Chi-Squared                   85.97     using 52 bins.
+# Null hypothesis probability of 8.63e-04 with 49 degrees of freedom
+#Spectrum 1: Lower range bound          0.3 reset by matrix bound to          0.3
+#Parameter distribution is derived from fit covariance matrix.
+# Model Flux 8.2307e-05 photons (1.1291e-13 ergs/cm^2/s) range (0.30000 - 2.0000 keV)
+#     Error range 7.807e-05 - 8.670e-05    (1.074e-13 - 1.184e-13)  (90.00% confidence)
+#
+!XSPEC> error 1 2 5
+flux 0.3 2.0 err 1000 90
+# Parameter   Confidence Range (2.706)
+#***Warning: Parameter pegged at hard limit: 0
+#     1            0    0.0370833    (-0.0158193,0.021264)
+#     2      0.87154     0.932769    (-0.0241972,0.0370309)
+#     5  3.94097e-05  4.68087e-05    (-3.52315e-06,3.87588e-06)
+#Spectrum 1: Lower range bound          0.3 reset by matrix bound to          0.3
+#Parameter distribution is derived from fit covariance matrix.
+# Model Flux 8.2307e-05 photons (1.1291e-13 ergs/cm^2/s) range (0.30000 - 2.0000 keV)
+#     Error range 7.774e-05 - 8.654e-05    (1.073e-13 - 1.179e-13)  (90.00% confidence)
+#
+!XSPEC> newpar 1 0
+flux 0.3 2.0
+#
+#Fit statistic  : Chi-Squared                   93.20     using 52 bins.
+#
+#Test statistic : Chi-Squared                   93.20     using 52 bins.
+# Null hypothesis probability of 1.44e-04 with 49 degrees of freedom
+# Current data and model not fit yet.
+#Warning: Either variance is not available through 
+#         valid fit or chains, or no models are currently 
+#         active. flux error will not be calculated.
+#Spectrum 1: Lower range bound          0.3 reset by matrix bound to          0.3
+# Model Flux 8.9777e-05 photons (1.2024e-13 ergs/cm^2/s) range (0.30000 - 2.0000 keV)
+#
+!XSPEC> newpar 1 0.0158187
+#
+#Fit statistic  : Chi-Squared                   85.97     using 52 bins.
+#
+#Test statistic : Chi-Squared                   85.97     using 52 bins.
+# Null hypothesis probability of 8.63e-04 with 49 degrees of freedom
+# Current data and model not fit yet.
+#
+!XSPEC> fit
+#                                   Parameters
+#Chi-Squared  |beta|/N    Lvl          1:nH          2:kT        5:norm
+#85.9691      0.0016317    -4     0.0158193      0.895738   4.29328e-05
+#========================================
+# Variances and Principal Axes
+#                 1        2        5  
+# 1.4750E-12| -0.0002  -0.0001   1.0000  
+# 1.1559E-04| -0.9382  -0.3462  -0.0002  
+# 2.1814E-04|  0.3462  -0.9382   0.0000  
+#----------------------------------------
+#
+#====================================
+#  Covariance Matrix
+#        1           2           3   
+#   1.279e-04  -3.331e-05   1.862e-08
+#  -3.331e-05   2.058e-04   5.558e-09
+#   1.862e-08   5.558e-09   4.734e-12
+#------------------------------------
+#
+#========================================================================
+#Model TBabs<1>*apec<2> Source No.: 1   Active/On
+#Model Model Component  Parameter  Unit     Value
+# par  comp
+#   1    1   TBabs      nH         10^22    1.58193E-02  +/-  1.13084E-02  
+#   2    2   apec       kT         keV      0.895738     +/-  1.43474E-02  
+#   3    2   apec       Abundanc            1.00000      frozen
+#   4    2   apec       Redshift            0.0          frozen
+#   5    2   apec       norm                4.29328E-05  +/-  2.17582E-06  
+#________________________________________________________________________
+#
+#
+#Fit statistic  : Chi-Squared                   85.97     using 52 bins.
+#
+#Test statistic : Chi-Squared                   85.97     using 52 bins.
+# Null hypothesis probability of 8.63e-04 with 49 degrees of freedom
+#
+!XSPEC> setplot energy
+cpd spectrum.ps/cps
+plot ldata delchi
+cpd none
+log none
+#
