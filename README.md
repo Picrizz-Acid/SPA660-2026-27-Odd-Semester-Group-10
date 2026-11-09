@@ -39,6 +39,6 @@ The single-temperature fit is not a good one (χ²/dof = 85.97/49), and the resi
 
 ---
 **Indian Institute of Technology Kanpur**  
-*SPA660 - High Energy Astrophysics of Binary Star Systems
+*SPA660 - High Energy Astrophysics of Binary Star Systems*
 *Members: Kushagra Rajput, Shriom Gupta, Prachi Jain*  
 *Instructor: Prof. Kunal Mooley (November 2026)*
