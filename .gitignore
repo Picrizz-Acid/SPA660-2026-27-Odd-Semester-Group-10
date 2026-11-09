@@ -1,0 +1,22 @@
+# CIAO & HEASoft local parameters and auto-saves
+*.par
+*.par.bak
+pfiles/
+syspfiles/
+
+# Intermediary diagnostic plots and graphics logs
+*.ps
+*.cps
+*.gif
+*.png
+*.jpg
+*.jpeg
+
+# XSPEC fit session logs and scratchpads (excluding tracked pipeline logs)
+*.log
+!wd2226_fit.log
+!pipeline_commands.md
+
+# OS specific overrides
+.DS_Store
+Thumbs.db
