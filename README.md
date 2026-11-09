@@ -25,7 +25,7 @@ We fitted an absorbed single-temperature thermal plasma (`tbabs×apec`) with the
 
 The single-temperature fit is not a good one (χ²/dof = 85.97/49), and the residuals are structured, mostly between 0.7 and 1.3 keV. We therefore read kT as an effective temperature, not that of an isothermal gas. The normalisation and luminosity also depend on the abundance table, and the accretion rate rests on an assumed white-dwarf mass. Accretion is a plausible explanation for the emission, but our data do not prove it. A simple energy-budget estimate leaves the available accretion power about three orders of magnitude above the observed L_X, and we could not resolve that gap.
 
-###Software
+### Software
 
 * CIAO 4.18.0 (CALDB 4.12.4)
 * HEASoft 6.37.1, with XSPEC 13.0.1
